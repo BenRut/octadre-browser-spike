@@ -4,7 +4,6 @@ import { CheckBox, PadContainer, CheckMark } from '../styles/Interface';
 class Pad extends Component {
 	state = {
 		checked: false,
-		color: '',
 	};
 	handlePress = (e) => {
 		this.setState({ checked: !this.state.checked });
@@ -13,7 +12,7 @@ class Pad extends Component {
 	render() {
 		return (
 			<>
-				<PadContainer checked={this.state.checked} onClick={this.handlePress}>
+				<PadContainer checked={this.state.checked} color={this.props.color}>
 					<CheckBox />
 					<p>Row:{this.props.row}</p>
 					<p>Column{this.props.column}</p>

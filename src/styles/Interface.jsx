@@ -23,14 +23,41 @@ const PadContainer = styled.div`
 	height: 60px;
 	width: 60px;
 	margin: 5px;
-	background-color: ${(props) => (props.checked ? '#FFFFFF' : '#000000')};
+	background-color: ${(props) => (props.checked ? '#FFFFFF' : props.color)};
+	border: solid white 4px;
+`;
+
+const SideButtonContainer = styled.div`
+	font-size: 10px;
+	position: relative;
+	height: 60px;
+	width: 60px;
+	margin: 5px;
+	background-color: ${(props) => (props.isActive ? props.color : '#000')};
 	border: solid white 4px;
 `;
 
 const Launchpad = styled.div`
-	width: 700px;
+	width: 630px;
 	display: flex;
 	flex-wrap: wrap;
 `;
 
-export { CheckBox, PadContainer, CheckMark, Launchpad };
+const LaunchpadContainer = styled.div`
+	display: flex;
+`;
+
+const SideButtonsContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+export {
+	CheckBox,
+	PadContainer,
+	CheckMark,
+	Launchpad,
+	SideButtonContainer,
+	LaunchpadContainer,
+	SideButtonsContainer,
+};
