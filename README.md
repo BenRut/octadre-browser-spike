@@ -6,3 +6,5 @@ An attempt to refactor
 Octadre is a an interface/sequencer for Novation Launchpad. This is an attempt to refactor the code to work in a limited capacity within the browser for demonstration purposes in order to promote the product to those who don’t own a Novation Launchpad.
 
 **Work In Progress**
+
+To run the web app locally, run `npm i` from the root directory and `npm start` to start the app.

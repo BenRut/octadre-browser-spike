@@ -52,6 +52,10 @@ const SideButtonsContainer = styled.div`
 	flex-direction: column;
 `;
 
+TopButtonsContainer = styled.div`
+	display: flex;
+`;
+
 export {
 	CheckBox,
 	PadContainer,
