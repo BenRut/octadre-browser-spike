@@ -12,22 +12,22 @@ import { getQueriesForElement } from '@testing-library/dom';
 class Interface extends Component {
 	state = {
 		sequencerPath: [
-			[0, 4],
-			[1, 5],
-			[2, 6],
-			[3, 7],
-			[4, 7],
-			[5, 6],
-			[6, 5],
-			[7, 4],
-			[7, 3],
-			[6, 2],
-			[5, 1],
-			[4, 0],
-			[3, 0],
-			[2, 1],
-			[1, 2],
-			[0, 3],
+			'04',
+			'15',
+			'26',
+			'37',
+			'47',
+			'56',
+			'65',
+			'74',
+			'73',
+			'62',
+			'51',
+			'40',
+			'30',
+			'21',
+			'12',
+			'03',
 		],
 		color: {
 			0: 'green',
@@ -40,17 +40,27 @@ class Interface extends Component {
 			7: 'blue',
 		},
 		activeTrack: 0,
+		activeStep: 0,
 	};
+
+	returnPadColor = (coordinatesString) => {
+		if (this.state.sequencerPath[this.state.activeStep] === coordinatesString) {
+			return '#FFFFFF';
+		}
+		if (this.state.sequencerPath.includes(coordinatesString)) {
+			return this.state.color[this.state.activeTrack];
+		} else {
+			return '#000';
+		}
+	};
+
 	createLaunchpad = () => {
 		const pads = [];
+
 		for (let i = 0; i < 8; i++) {
 			for (var j = 0; j < 8; j++) {
 				pads.push(
-					<Pad
-						row={i}
-						column={j}
-						color={this.state.color[this.state.activeTrack]}
-					/>
+					<Pad row={i} column={j} color={this.returnPadColor(`${i}${j}`)} />
 				);
 			}
 		}
